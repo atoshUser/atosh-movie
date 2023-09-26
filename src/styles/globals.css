@@ -9,18 +9,37 @@
     box-sizing: border-box;
   }
   html {
-    height: 100vh;
+    height: 200vh;
     scroll-behavior: smooth;
   }
+
   body {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 1.2;
-    background-color: #f8f8f8;
+    background-color: #141414;
     color: #222;
+  }
+  body {
+    @apply scrollbar scrollbar-track-transparent scrollbar-thumb-slate-300   scrollbar-thin;
+  }
+  .myContainer {
+    width: 100%;
+    max-width: 1420px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@layer components {
+  .navLink {
+    @apply text-ellipsis text-slate-300 cursor-pointer hover:text-slate-600
+      transition-all duration-300;
   }
 }
