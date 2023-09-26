@@ -65,13 +65,15 @@ const Header = () => {
           </Button>
           <IconButton
             aria-label="button-bell"
-            className="text-white w-[35px]  h-[35px] md:w-[50px] md:h-[50px]"
+            className=" w-[35px]  h-[35px] md:w-[50px] md:h-[50px]"
+            sx={{ color: "white" }}
           >
             <AiFillBell />
           </IconButton>
           <IconButton
             aria-label="account-setting-icon"
-            className="text-white w-[35px] h-[35px]  md:w-[50px] md:h-[50px]"
+            className="w-[35px] h-[35px]    md:w-[50px] md:h-[50px]"
+            sx={{ color: "white" }}
           >
             <RiAccountCircleLine />
           </IconButton>
