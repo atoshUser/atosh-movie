@@ -51,28 +51,28 @@ const Header = () => {
         <div className="flex items-center space-x-3">
           <IconButton
             aria-label="search-icon"
-            className="text-white w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+            className=" w-[40px] h-[40px] md:w-[70px] md:h-[70px]"
+            sx={{ color: "white" }}
           >
             <FiSearch />
           </IconButton>
           <Button
             variant="outlined"
-            className={`text-white p-[3px] md:p-sm  font-semibold  ${
-              isScrolled && `border-white`
-            }`}
+            className={` p-[3px]  md:p-sm  font-semibold  `}
+            sx={{ color: "white", border: "1px solid white" }}
           >
             Kids
           </Button>
           <IconButton
             aria-label="button-bell"
-            className=" w-[35px]  h-[35px] md:w-[50px] md:h-[50px]"
+            className=" w-[40px]  h-[40px] md:w-[70px] md:h-[70px]"
             sx={{ color: "white" }}
           >
             <AiFillBell />
           </IconButton>
           <IconButton
             aria-label="account-setting-icon"
-            className="w-[35px] h-[35px]    md:w-[50px] md:h-[50px]"
+            className="w-[40px] h-[40px]    md:w-[70px] md:h-[70px]"
             sx={{ color: "white" }}
           >
             <RiAccountCircleLine />
