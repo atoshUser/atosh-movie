@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  console.log(process.env.NEXT_PUBLIC_API_KEY);
+  console.log(process.env.NEXT_PUBLIC_API_DOMAIN);
+
   const handleScrolled = () => {
     console.log("scrolled");
 

@@ -1,7 +1,12 @@
 import Head from "next/head";
-import { Header } from "@/components";
+import { Header, Hero } from "@/components";
+import axios from "axios";
+import { API_REQUSET } from "@/service/api.service";
+import { useEffect } from "react";
+import { GetServerSideProps } from "next";
+import { IMovie } from "@/interfaces/app.interface";
 
-export default function Home() {
+export default function Home({ dataProps }: IHomeProps): JSX.Element {
   return (
     <div className="flex flex-col min-h-screen ">
       <Head>
@@ -11,8 +16,8 @@ export default function Home() {
         <link rel="shortcut icon" href="/site-logo.svg" type="image/x-icon" />
       </Head>
       <Header />
-      <main>
-        {/* {Hero} */}
+      <main className="relative top-[70px] md:top-[100px]  h-[85vh]  overflow-hidden">
+        <Hero data={dataProps} />
         <section>
           {/* {Row} */}
           {/* {Big Row} */}
@@ -22,4 +27,16 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export const getServerSideProps: GetServerSideProps<IHomeProps> = async () => {
+  const trending = await fetch(API_REQUSET.trending).then((res) => res.json());
+
+  return {
+    props: { dataProps: trending.results },
+  };
+};
+
+interface IHomeProps {
+  dataProps: IMovie[];
 }

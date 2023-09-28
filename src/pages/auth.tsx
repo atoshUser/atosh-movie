@@ -14,7 +14,7 @@ const Auth = () => {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <div>
-        <h2>Auth Page</h2>
+        <h2 className="text-lg text-white">Auth Page</h2>
       </div>
     </>
   );
