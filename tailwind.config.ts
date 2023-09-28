@@ -20,6 +20,6 @@ const config: Config = {
       xl: "1280px",
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"), require("tailwind-scrollbar-hide")],
 };
 export default config;

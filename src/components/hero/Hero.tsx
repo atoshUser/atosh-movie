@@ -9,9 +9,6 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 import ReactStars from "react-stars";
 const Hero = ({ data }: IHero): JSX.Element => {
   const [movie, setMovie] = useState<IMovie>({} as IMovie);
-  if (movie) {
-    console.log(movie);
-  }
 
   const getRandomData = ({ data }: IHero) => {
     const randomData = data[Math.floor(Math.random() * data.length)];
@@ -27,12 +24,15 @@ const Hero = ({ data }: IHero): JSX.Element => {
       <div className="h-full -z-10">
         <Image
           src={`${image_base_url}${movie?.poster_path || movie?.backdrop_path}`}
-          alt={movie.title}
+          alt={movie?.title || movie?.original_title}
           fill
           className="  h-screen absolute object-cover opacity-50"
         />
       </div>
-      <div className="absolute w-full h-[80%]  flex flex-col top-0 left-0 p-[10px] md:pl-[30px] z-200 md:justify-center">
+      <div className="absolute w-full h-[80%]  flex flex-col top-0 left-0 p-[10px] md:pl-[30px] z-200 justify-end md:justify-center">
+        <div className="w-[111px] flex p-[7px] md:text-[20px] lg:text-[25px] text-white md:px-[15px] md:py-[8px] justify-center capitalize font-bold  rounded-bl-md rounded-tr-md bg-[#1d1d1d50]/50">
+          {movie?.media_type}
+        </div>
         <div className="flex  space-x-3  items-center">
           <ReactStars
             edit={false}
@@ -51,10 +51,10 @@ const Hero = ({ data }: IHero): JSX.Element => {
         <p className="max-w-sm  md:max-w-lg lg:max-w-4xl mb-4 leading-2 md:leading-6 text-slate-200 text-[15px] md:text-[18px] ">
           {movie?.overview?.slice(0, 130)}...
         </p>
-        <div className="flex w-[150px] lg:w-[200px] rounded-full bg-gradient-to-r p-1 from-pink-500 via-red-500 to-yellow-500">
+        <div className="flex w-[120px] md:w-[150px] lg:w-[200px] rounded-full bg-gradient-to-r p-[1px] md:p-1 from-pink-500 via-red-500 to-yellow-500">
           <Button
             startIcon={<TbPlayerPlayFilled />}
-            className="w-full rounded-full sm:font-medium md:font-bold whitespace-nowrap transition-all  duration-300 bg-white/60 sm:p-[8px] lg:py-[15px]"
+            className="w-full rounded-full text-[12px]  md:text-[15px]  font-medium md:font-bold whitespace-nowrap transition-all  duration-300 bg-white/60 p-[5px] lg:py-[15px]"
           >
             Watch now
           </Button>
